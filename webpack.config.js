@@ -10,6 +10,24 @@ const config = {
   },
   module: {
     rules : [
+        {
+            test: /\.(png|jpe?g|gif|csv)$/,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {},
+              },
+            ],
+          },
+        // {
+        //     test: /\.csv$/,
+        //     loader: 'csv-loader',
+        //     options: {
+        //       dynamicTyping: true,
+        //       header: true,
+        //       skipEmptyLines: true
+        //     }
+        //   },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -32,6 +50,7 @@ const config = {
       path.resolve('./node_modules')
     ]
   },
+  node: { fs: 'empty' },
   devServer: {
     contentBase: __dirname + '/public',
     compress: true,
