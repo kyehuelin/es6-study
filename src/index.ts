@@ -1,27 +1,37 @@
-interface Person {
-    name: string;
-    age: number;
-    hobbies: string[];
-}
+import "./main.css";
+import "./abstract";
 
-enum Role {
-    ADMIN, READ_ONLY, GUEST
-}
-
-const person: Person = {
-          name: 'Kye',
-    age: 30,
-    hobbies: ['tennis', 'bowling', 'football', 'gym']
+type Person = {
+  name: string;
+  age: number;
 };
 
-const array: any[] = ['hello'];
+type People = {
+  [person: string]: Person;
+};
+type Strings = {
+  [strings: string]: string;
+};
 
-for (const hobby of person.hobbies) {
-    console.log(hobby.toUpperCase());
-}
+const strings: Strings = {
+  asdf: "string1",
+  string2: "string2",
+};
 
-const num: number = 10;
-const bool: boolean = false;
-const str: string = 'string';
+const people: People = {
+  harry: {
+    name: "harry",
+    age: 50,
+  },
+  john: {
+    name: "john",
+    age: 32,
+  },
+};
 
-const role: [number, string, number] = [20, 'hello', 20];
+const person: Person = {
+  name: "kye",
+  age: 30,
+};
+
+console.log(person, people);

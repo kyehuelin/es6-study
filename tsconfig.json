@@ -1,18 +1,24 @@
 {
-    "compileOnSave": true,
+    
   "compilerOptions": {
-    "lib": ["es2019", "es2020.bigint", "es2020.string", "es2020.symbol.wellknown"],
-    "module": "es6",
-
-    "outDir": "./dist/",
-    "noImplicitAny": true,
     "target": "es5",
-    "jsx": "react",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+
     "allowJs": true,
-    "rootDir": "src",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
   },
-  "include": ["src", ".eslintrc.js"],
-  "exclude": ["node_modules", "build", "scripts", "webpack.config.js", "*.js"]
+  "include": [  "src", "./src/**/*.js", "./src/**/*.ts", "./src/**/*.tsx"],
+  "exclude": ["node_modules", "build", "scripts", "old", ".eslintrc.js",  "./old/**/*.js", "./old/**/*.ts", "./old/**/*.tsx"]
 }

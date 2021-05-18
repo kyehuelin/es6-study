@@ -1,0 +1,32 @@
+{
+  "files.associations": {
+    "*.jsx": "javascriptreact",
+    "*.tsx": "typescriptreact"
+  },
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": false,
+  "typescript.validate.enable": true,
+  "javascript.validate.enable": true,
+  "eslint.validate": [
+    "json",
+    "html",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true
+  },
+  "files.eol": "\n",
+  "css.lint.validProperties": ["composes"],
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.validProperties": ["composes"],
+  "scss.lint.unknownAtRules": "ignore",
+  "eslint.workingDirectories": [ "fe/client"] 
+}

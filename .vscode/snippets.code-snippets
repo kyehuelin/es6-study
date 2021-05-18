@@ -1,0 +1,92 @@
+{
+    // Place your full-fe-setup-react workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+    // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+    // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+    // used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+    // Placeholders with the same ids are connected.
+    // Example:
+    "babcom": {
+        "prefix": "babCom",
+        "body": [
+          "import React, { ReactElement } from \"react\";",
+          "import \"react-babylonjs\";",
+          "import { Vector3 } from \"@babylonjs/core\";",
+          "",
+          "type Props = {",
+          "  children?: React.ReactNode;",
+          "  name: string;",
+          "};",
+          "",
+          "const $TM_FILENAME_BASE = ({ children, name }: Props): ReactElement => {",
+          "  return (",
+          "    <box name={name} position={new Vector3(0, 0, 0)}>",
+          "      <standardMaterial name=\"mat\" />",
+          "      {children}",
+          "    </box>",
+          "  );",
+          "};",
+          "",
+          "export default $TM_FILENAME_BASE;",
+          ""
+        ],
+        "description": "basic babylon component"
+      },
+    "babylon class": {
+        "prefix": "babClass",
+        "body": [
+            "import * as B from \"@babylonjs/core\";",
+            "",
+            "class $TM_FILENAME_BASE {",
+            "  private scene: B.Scene;",
+            "",
+            "  constructor(scene: B.Scene) {",
+            "    this.scene = scene;",
+            "  }",
+            "",
+            "  private start = () => {",
+            "    console.log(new B.Vector3(0, 0, 0));",
+            "  };",
+            "}",
+            "",
+            "export default $TM_FILENAME_BASE;",
+            ""
+        ],
+        "description": "babylon class"
+    },
+    "create a store slice": {
+        "prefix": "slice",
+        "body": [
+          "import { createSlice } from \"@reduxjs/toolkit\";",
+          "import type { RootState } from \"../store\";",
+          "",
+          "// Define a type for the slice state",
+          "interface ${TM_FILENAME_BASE/(.)/${1:/upcase}/}State {",
+          "  value: boolean;",
+          "}",
+          "",
+          "// Define the initial state using that type",
+          "const initialState: ${TM_FILENAME_BASE/(.)/${1:/upcase}/}State = {",
+          "  value: false,",
+          "};",
+          "",
+          "export const ${TM_FILENAME_BASE}Slice = createSlice({",
+          "  name: \"${TM_FILENAME_BASE}\",",
+          "  initialState,",
+          "  reducers: {",
+          "    setValue: (state, { payload }) => {",
+          "      state.value = payload;",
+          "    },",
+          "  },",
+          "});",
+          "",
+          "export const { setValue } = ${TM_FILENAME_BASE}Slice.actions;",
+          "",
+          "export const selectValue = (state: RootState) => state.${TM_FILENAME_BASE}.value;",
+          "",
+          "export default ${TM_FILENAME_BASE}Slice.reducer;",
+          ""
+        ],
+        "description": "create a store slice"
+      }
+}
